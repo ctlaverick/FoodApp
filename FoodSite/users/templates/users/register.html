@@ -1,0 +1,36 @@
+{% extends "users/base.html" %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block content %}
+<div class="my-auto container text-center">
+    <div class="row mt-5">
+
+        <div class="col-lg-6 d-flex">
+            <div class="container content-section">
+                <form method="post">
+                    {% csrf_token %}
+                    <fieldset class="form-group">
+                        <legend class="border-bottom mb-4 text-success display-3">Join Today</legend>
+                        {{ form|crispy }}
+                    </fieldset>
+                    <div class="form-group">
+                        <button class="btn btn-outline-success mb-2" type="submit">Sign Up</button>
+                    </div>
+                </form>
+                <div class="border-top pt-3">
+                    <small class="text-muted">
+                        Already have an Account? <a href="{% url 'login'%}" class="ml-2">Sign In</a>
+                    </small>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-6 d-none d-lg-block my-auto">
+            <img class="img-fluid" src="{% static 'users/mobile_login.svg' %}" alt="">
+        </div>
+    </div>
+</div>
+
+{% endblock content%}
+
+

@@ -1,0 +1,166 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <title>{{ Title }}</title>
+
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg bg-body-secondary">
+        <div class="container-fluid">
+            <a href="#" class="navbar-brand">FoodApp_</a>
+            <div class="ms-auto me-4 d-lg-none">
+                <a class="btn btn-outline-success" href="{% url 'login' %}">Login</a>
+            </div>
+            <div class="me-5 d-lg-none">
+                <a class="btn btn-outline-success" href="{% url 'register' %}">Register</a>
+            </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <ul class="navbar-nav ms-5 me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a href="{% url 'home' %}" class="nav-link active" aria-current="page">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{% url 'home' %}#features" class="nav-link" aria-current="page">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{% url 'home' %}#pricing" class="nav-link" aria-current="page">Pricing</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="d-none d-lg-block ms-auto me-4">
+                <a class="btn btn-outline-success" href="{% url 'login' %}">Login</a>
+            </div>
+            <div class="d-none d-lg-block me-5">
+                <a class="btn btn-outline-success" href="{% url 'register' %}">Register</a>
+            </div>
+        </div>
+    </nav>
+    <!-- End -->
+    
+    <!-- Main -->
+    <main class="container-fluid">
+        <div class="row bg-dark justify-content-center align-items-center mb-5 min-vh-100">
+            <div class="col-lg-5 text-center text-success">
+                <h1 class="display-1 text-center">Join Today!</h1>
+                <h2 class="display-5 text-center">Making Food Easier One Meal at a Time</h2>
+                <a href="{% url 'login' %}" class="btn btn-lg btn-success">Sign Up</a>
+            </div>
+            <img class="col-10 col-lg-5" src="{% static 'users/eating_together_green.svg' %}" alt="Two people eating at a table under a light">
+        </div>
+
+        <!-- features -->
+        <div class="container-fluid mt-5" id="features">
+            <h1 class="text-center my-4">
+                Saving You Time By Making Food More Efficient
+            </h1>
+            <div class="row g-4 mt-4">
+                <div class="row mt-4 justify-content-center align-items-center">
+                    <img class="d-none d-md-flex col-md-4" src="{% static 'users/diet_green.svg'%}" alt="">
+                    <div class="col-10 col-md-6 ps-5">
+                        <h2 class="">Plan your meals</h2>
+                        <p>Using our intuitive web app and mobile app you can create weekly or monthly meal plans to organise your meal experiences. Saving you time by making food more efficient</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row g-4 mt-4">
+                <div class="row mt-4 justify-content-center align-items-center">
+                    <img class="d-none d-md-flex col-md-4" src="{% static 'users/online_groceries_green.svg'%}" alt="">
+                    <div class="col-10 col-md-6 ps-5">
+                        <h2 class="">Generate Shopping lists</h2>
+                        <p>Using your meal plans created on our website and mobile app you can generate a shopping list for all your planned meals, snacks and drinks. Making your shopping experience faster and more smooth</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row g-4 mt-4">
+                <div class="row mt-4 justify-content-center align-items-center">
+                    <img class="d-none d-md-flex col-md-4" src="{% static 'users/tasting_green.svg'%}" alt="">
+                    <div class="col-10 col-md-6 ps-5">
+                        <h2 class="">Create and Find New Recipies</h2>
+                        <p>You can easily add your own recipies to your account and even find other people's to use. When creating a new meal plan you can quickly add your own and other peoples recipies saving you time by stopping and allowing you to easily try new recipies</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row g-4 mt-4">
+                <div class="row mt-4 justify-content-center align-items-center">
+                    <img class="d-none d-md-flex col-md-4" src="{% static 'users/cooking_green.svg'%}" alt="">
+                    <div class="col-10 col-md-6 ps-5">
+                        <h2 class="">Eat Healthier and Plan for Dietry Requirements</h2>
+                        <p>Through our website and app you can easily track and manage the foods you eat to provide you with an easy way of targeting a healthier diet. You can even include any dietry requirements you or guests may have to easily plan around them smoothing the cooking process out making you seem like a top chef</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Pricing -->
+
+        <section id="pricing" class="bg-light mt-5 min-vh-100">
+            <div class="container-lg">
+                <div class="text-center pt-3">
+                    <h2>Pricing Plans</h2>
+                    <p class="lead text-muted">Choose a pricing plan to suit you.</p>
+                </div>
+    
+                <div class="row my-5 align-items-center justify-content-center g-5">
+                    <div class="col-8 col-lg-4 col-xl-3">
+                        <div class="card border-1">
+                            <div class="card-body text-center py-4">
+                                <h4 class="card-title">Free Verison</h4>
+                                <p class="lead card-subtitle">Access to Limited Features</p>
+                                <p class="display-6 my-4 text-success fw-bold">Free</p>
+                                <p class="card-text mx-5 text-muted d-none d-lg-block">Billed Annually or Monthly</p>
+                                <p class="card-text mx-5 text-muted d-none d-lg-block">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                                <a href="#" class="btn btn-outline-success btn-lg mt-3">Buy Now</a>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="col-9 col-lg-4">
+                        <div class="card border-secondary border-2">
+                            <div class="card-header text-center text-success">Most Popular</div>
+                            <div class="card-body text-center py-5">
+                                <h4 class="card-title">Personal</h4>
+                                <p class="lead card-subtitle">Access to all main individual features</p>
+                                <p class="display-4 my-4 text-success fw-bold">£2.50 / m</p>
+                                <p class="card-text mx-5 text-muted d-none d-lg-block">Billed Annually or Monthly</p>
+                                <p class="card-text mx-5 text-muted d-none d-lg-block">Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+                                <a href="#" class="btn btn-outline-success btn-lg mt-3">Buy Now</a>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="col-8 col-lg-4 col-xl-3">
+                        <div class="card border-1">
+                            <div class="card-body text-center py-4">
+                                <h4 class="card-title">Personal +</h4>
+                                <p class="lead card-subtitle">Access to all individual and group features </p>
+                                <p class="display-5 my-4 text-success fw-bold">£5 / m</p>
+                                <p class="card-text mx-5 text-muted d-none d-lg-block">Billed Annually or Monthly</p>
+                                <p class="card-text mx-5 text-muted d-none d-lg-block">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+                                <a href="#" class="btn btn-outline-success btn-lg mt-3">Buy Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    <!-- Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
