@@ -1,0 +1,46 @@
+{% extends "MealPlans/portal_base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<h1>Add Ingredient(s)</h1>
+<form method="POST" id="form-container">
+    {% csrf_token %}
+    {{ formset.management_form }}
+    {% for form in formset %}
+    <div class="ingredients-form">
+        {{ form.as_p }}
+    </div>
+    {% endfor %}
+    <button id="add-form" type="button">Add Another Ingredient</button>
+    <button type="submit">Create Ingredient(s)</button>
+</form>
+
+<script type='text/javascript'>
+    // https://www.brennantymrak.com/articles/django-dynamic-formsets-javascript
+    
+    let IngredientsForm = document.querySelectorAll(".ingredients-form")
+    let container = document.querySelector("#form-container")
+    let addButton = document.querySelector("#add-form")
+    let totalForms = document.querySelector("#id_form-TOTAL_FORMS")
+
+    let formNum = IngredientsForm.length-1 // Get the number of the last form on the page with zero-based indexing
+
+    addButton.addEventListener('click', addForm)
+
+    function addForm(e) {
+        e.preventDefault()
+
+        let newForm = IngredientsForm[0].cloneNode(true) //Clone the form
+        let formRegex = RegExp(`form-(\\d){1}-`,'g') //Regex to find all instances of the form number
+
+        formNum++ //Increment the form number
+        newForm.innerHTML = newForm.innerHTML.replace(formRegex, `form-${formNum}-`) //Update the new form to have the correct form number
+        container.insertBefore(newForm, addButton) //Insert the new form at the end of the list of forms
+
+        totalForms.setAttribute('value', `${formNum+1}`) //Increment the number of total forms in the management form
+    }
+
+
+</script>
+
+{% endblock content %}

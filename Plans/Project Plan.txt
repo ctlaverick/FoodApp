@@ -1,0 +1,49 @@
+Food Web App Plan:
+
+Project Description:
+This project will be a web application with the possibility for a future mobile app for IOS and Android.
+The user of this web application will be able to create, read, update and delete (CRUD) meal plans which can be used to create shopping lists, track healthy eating and try new recipies.
+The aim of the app is to make meal planning, shopping, preparation and cooking easier for everyone.
+This should be useful for those living alone, in large families, with dietry requriements and even for having guests over.
+
+Project Requriements:
+
+Meal Planner - 
+1. Create a meal plan
+    - Ask for when the meal plan is for (e.g. which week)
+2. CRUD meals to a plan
+    - Allow custom meals
+    - Choose from added recipies from community
+    - Search through meals to add
+3. Generate a shopping list from the requriements for each meal
+
+Shopping List
+1. Ask which meal plan they'd like to generate a shopping list or if they'd want to create their own
+2a If create their own allow them to CRUD items into a shopping list
+2b. If using a meal plan to generate the shopping list get that meal plan and generate it then allow them to add custom items at the bottom
+2b. Ability to remove generated items if they already have it or don't want to buy 
+
+Recipies
+- CRUD their own recipies
+- Share recipe to community Section
+- Customise a recipe from the community section
+
+
+Community Section
+- Community forms
+- Recipe Search
+    -Filter by type, dietry requriements, ratings, popularity, price, preptime, 
+- Add recipies to your own
+    - Customise other peoples recipies
+- Restaurant and Take out finder
+    - Community recommendations
+    - Search by distance or also by Filter by type, dietry requriements, ratings, popularity price
+
+community profile
+
+
+Models:
+
+MealPlan
+- author
+- date

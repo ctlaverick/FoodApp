@@ -1,0 +1,26 @@
+{% extends "MealPlans/portal_base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+<h1 class="display-1">Ingredients</h1>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col"></th>
+            <th scope="col">
+                <a href="{% url 'add_ingredient' %}" class="btn btn-success ms-auto">Add Food</a>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for ing in ingredients %}
+        <tr>
+            <th scope="row">{{ ing.name }}</th>
+            <td colspan="2">
+                
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>  
+{% endblock content%}
